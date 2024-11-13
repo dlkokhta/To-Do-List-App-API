@@ -11,7 +11,7 @@ servers:
     description: local server
 
 paths:
-  /api/todos:
+  /api/addToDo:
     post:
       summary: Create a new Todo
       description: Adds a new todo item with title and text.
