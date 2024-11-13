@@ -1,7 +1,8 @@
 import express from "express";
-const todoAppRouter = express.Router();
-import AddTodo from "../controllers/AddToDo.js";
+import AddToDo from "../controllers/AddToDo";
 
-todoAppRouter.post("/addToDo", AddTodo);
+const todoAppRouter = express.Router();
+
+todoAppRouter.post("/addToDo", AddToDo);
 
 export default todoAppRouter;

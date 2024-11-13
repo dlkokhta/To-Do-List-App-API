@@ -12,6 +12,4 @@ app.use("/api", todoAppRouter);
 app.use("/public", express.static("public"));
 app.use("/", ...swaggerMiddleware());
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log(`Server is running on port ${process.env.PORT || 4000}`);
-});
+app.listen(process.env.PORT || 4000);
