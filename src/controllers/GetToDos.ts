@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 import { initializeDb } from "../config/database";
 
-const GetToDo = async (_req: Request, res: Response) => {
+const GetToDos = async (_req: Request, res: Response) => {
   try {
     const db = await initializeDb();
     console.log("Database connection:", db);
@@ -17,4 +17,4 @@ const GetToDo = async (_req: Request, res: Response) => {
   }
 };
 
-export default GetToDo;
+export default GetToDos;

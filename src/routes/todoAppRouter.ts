@@ -1,10 +1,10 @@
 import express from "express";
 import AddToDo from "../controllers/AddToDo";
-import GetToDo from "../controllers/GetToDo";
+import GetToDos from "../controllers/GetToDos";
 
 const todoAppRouter = express.Router();
 
 todoAppRouter.post("/addToDo", AddToDo);
-todoAppRouter.get("/getToDo", GetToDo);
+todoAppRouter.get("/getToDos", GetToDos);
 
 export default todoAppRouter;

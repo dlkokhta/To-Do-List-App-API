@@ -73,7 +73,7 @@ paths:
                     type: string
                     example: "Title and text are required."
 
-  /api/getToDo:
+  /api/getToDos:
     get:
       tags:
         - Todos
