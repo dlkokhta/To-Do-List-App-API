@@ -8,11 +8,13 @@ const AddToDo = async (req: Request, res: Response) => {
   const db = await initializeDb();
 
   try {
+    // Insert the new task into the database
     const result = await db.run(
       "INSERT INTO tasks (title, text) VALUES (?, ?)",
       [title, text]
     );
 
+    // Send the response with the task details after the database insert
     res.status(201).json({
       id: result.lastID,
       title,
