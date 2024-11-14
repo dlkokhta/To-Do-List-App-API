@@ -76,9 +76,10 @@ paths:
   /api/getToDos:
     get:
       tags:
-        - Todos
+        - Todos # Ensure this matches the desired section in Swagger UI
       summary: Get all todos
       description: This endpoint allows you to get all todos from the database.
+      operationId: getToDos
       responses:
         "200":
           description: Todos retrieved successfully
