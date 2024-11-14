@@ -10,6 +10,12 @@ const DeleteToDo = async (req: Request, res: Response) => {
     // Perform the delete operation
     const result = await db.run("DELETE FROM tasks WHERE id = ?", [id]);
 
+    // Check if 'result' and 'result.changes' are defined
+    // if (!result || result.changes === 0) {
+    //   // If no task was deleted, return a 404 error
+    //   return res.status(404).json({ message: "Task not found" });
+    // }
+
     // Send a success response if the task was deleted
     res.status(200).json({ message: "Task deleted successfully" });
   } catch (error) {

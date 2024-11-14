@@ -140,3 +140,63 @@ paths:
               message:
                 type: "string"
                 example: "Failed to delete task"
+
+  /api/editToDo/{id}:
+    put:
+      tags:
+        - Todos
+      summary: Edit a todo by ID
+      description: Updates the title and text of an existing todo item.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the todo to update.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: The updated title of the todo.
+                  example: Updated Task Title
+                text:
+                  type: string
+                  description: The updated text of the todo.
+                  example: Updated Task Description
+      responses:
+        "200":
+          description: Task updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Task updated successfully
+        "404":
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Task not found
+        "500":
+          description: Failed to update task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Failed to update task
