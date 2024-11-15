@@ -5,6 +5,7 @@ import DeleteToDo from "../controllers/DeleteToDo.js";
 import EditToDo from "../controllers/EditToDo.js";
 import CompletedToDo from "../controllers/CompletedToDo.js";
 import DeleteAllToDos from "../controllers/DeleteAllToDos.js";
+import DeleteCompletedToDos from "../controllers/DeleteCompletedToDos.js";
 
 const todoAppRouter = express.Router();
 
@@ -14,5 +15,6 @@ todoAppRouter.delete("/deleteToDo/:id", DeleteToDo);
 todoAppRouter.put("/editToDo/:id", EditToDo);
 todoAppRouter.patch("/completedToDo/:id", CompletedToDo);
 todoAppRouter.delete("/deleteAllToDo", DeleteAllToDos);
+todoAppRouter.delete("/deleteCompletedToDo", DeleteCompletedToDos);
 
 export default todoAppRouter;
