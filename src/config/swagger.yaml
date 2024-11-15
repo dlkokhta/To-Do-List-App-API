@@ -272,7 +272,7 @@ paths:
       summary: Delete all tasks
       description: Deletes all tasks from the database.
       tags:
-        - ToDo
+        - Todos
       responses:
         200:
           description: All tasks deleted successfully
@@ -310,7 +310,7 @@ paths:
       summary: Delete all completed tasks
       description: Deletes all tasks that have been marked as completed from the database.
       tags:
-        - ToDo
+        - Todos
       responses:
         200:
           description: All completed tasks deleted successfully
