@@ -266,3 +266,41 @@ paths:
                   error:
                     type: string
                     example: "Database connection error or other issue."
+
+  /api/deleteAllToDo:
+    delete:
+      summary: Delete all tasks
+      description: Deletes all tasks from the database.
+      tags:
+        - ToDo
+      responses:
+        200:
+          description: All tasks deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "All tasks deleted successfully"
+        404:
+          description: No tasks found to delete
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "No tasks found to delete"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Failed to delete tasks"
