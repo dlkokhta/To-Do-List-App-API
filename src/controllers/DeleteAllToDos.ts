@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { initializeDb } from "../config/database";
 
 const DeleteAllToDos = async (
-  req: Request,
+  _req: Request,
   res: Response
 ): Promise<Response> => {
   const db = await initializeDb();

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { initializeDb } from "../config/database";
 
-const DeleteCompletedToDos = async (req: Request, res: Response) => {
+const DeleteCompletedToDos = async (_req: Request, res: Response) => {
   const db = await initializeDb();
 
   try {

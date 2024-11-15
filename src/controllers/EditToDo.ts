@@ -5,9 +5,6 @@ const EditToDo = async (req: Request, res: Response): Promise<Response> => {
   const { id } = req.params;
   const { title, text } = req.body;
 
-  //   console.log("req.params", req.params);
-  //   console.log("req.body", req.body);
-
   const db = await initializeDb();
 
   try {

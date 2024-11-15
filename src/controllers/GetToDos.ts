@@ -5,7 +5,6 @@ import { initializeDb } from "../config/database";
 const GetToDos = async (_req: Request, res: Response) => {
   try {
     const db = await initializeDb();
-    console.log("Database connection:", db);
 
     const tasks = await db.all("SELECT * FROM tasks");
     console.log("Fetched tasks:", tasks);

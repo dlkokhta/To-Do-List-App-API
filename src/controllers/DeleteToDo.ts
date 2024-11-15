@@ -7,7 +7,7 @@ const DeleteToDo = async (req: Request, res: Response) => {
   const db = await initializeDb();
 
   try {
-    const result = await db.run("DELETE FROM tasks WHERE id = ?", [id]);
+    await db.run("DELETE FROM tasks WHERE id = ?", [id]);
 
     res.status(200).json({ message: "Task deleted successfully" });
   } catch (error) {
