@@ -20,6 +20,7 @@ const AddToDo = async (req: Request, res: Response) => {
       title,
       text,
       createdAt: new Date().toISOString(),
+      completed: false,
     });
   } catch (error) {
     console.error("Error adding task:", error);

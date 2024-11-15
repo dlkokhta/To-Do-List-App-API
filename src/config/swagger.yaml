@@ -200,3 +200,69 @@ paths:
                   message:
                     type: string
                     example: Failed to update task
+
+  /api/completedToDo/{id}:
+    patch:
+      summary: Toggle the completed status of a todo task
+      description: This endpoint toggles the "completed" status of a specific todo task by its ID.
+      tags:
+        - Todos
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: The ID of the todo task to update.
+      responses:
+        200:
+          description: Successfully toggled the completed status of the todo task.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Todo status updated"
+                  todo:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: "Sample Task"
+                      text:
+                        type: string
+                        example: "This is a sample task description."
+                      completed:
+                        type: boolean
+                        example: true
+                      createdAt:
+                        type: string
+                        example: "2023-11-14T12:00:00.000Z"
+        404:
+          description: Todo task not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Todo not found"
+        500:
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Error updating todo"
+                  error:
+                    type: string
+                    example: "Database connection error or other issue."

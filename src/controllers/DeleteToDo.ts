@@ -3,11 +3,10 @@ import { Request, Response } from "express";
 import { initializeDb } from "../config/database";
 
 const DeleteToDo = async (req: Request, res: Response) => {
-  const { id } = req.params; // Extract the task ID from the URL parameter
+  const { id } = req.params;
   const db = await initializeDb();
 
   try {
-    // Perform the delete operation
     const result = await db.run("DELETE FROM tasks WHERE id = ?", [id]);
 
     // Check if 'result' and 'result.changes' are defined
