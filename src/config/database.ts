@@ -12,8 +12,8 @@ export const initializeDb = async () => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT NOT NULL,
       text TEXT,
-      createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      
+      createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      completed BOOLEAN DEFAULT 0
     );
   `);
 
